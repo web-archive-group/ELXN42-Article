@@ -443,4 +443,5 @@ In an era where web archiving and twitter collection can be seen as expensive lu
 * Ed Summers, 'On Forgetting and hydration', https://medium.com/on-archivy/on-forgetting-e01a2b95272
 * Nick Ruest, Library and Archives Canada, 2015-12-07, #elxn42 tweets (42nd Canadian Federal Election), http://hdl.handle.net/10864/11311 V1 [Version]
 * Library and Archives Canada, #elxn42 tweets (42nd Canadian Federal Election), http://hdl.handle.net/10864/11310 V3 [Version]"
-* Ainsworth, Scott G., Ahmed AlSum, Hany SalahEldeen, Michele C. Weigle, and Michael L. Nelson. “How Much of the Web Is Archived?” arXiv:1212.6177 [cs], December 26, 2012. http://arxiv.org/abs/1212.6177
+* Ainsworth, Scott G., Ahmed AlSum, Hany SalahEldeen, Michele C. Weigle, and Michael L. Nelson. "How Much of the Web Is Archived?" arXiv:1212.6177 [cs], December 26, 2012. http://arxiv.org/abs/1212.6177
+* K. Driscoll and S. Walker, "Big Data, Big Questions| Working Within a Black Box: Transparency in the Collection and Production of Big Twitter Data," International Journal of Communication, vol. 8, no. 0, p. 20, Jun. 2014.
