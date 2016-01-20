@@ -71,6 +71,8 @@ Search API: `twarc.py --search "#elxn42" > elxn42-search.json`
 
 Stream API: `twarc.py --stream "#elxn42" > elxn42-stream.json`
 
+**More here on the different approaches between Search/Stream - I liked the approach of running Stream and then using Search to fill in gaps... Nick could you explain a bit more? Also cron jobs, and the issue of the silent fail we encountered? (which is now fiexed, but might be worth mentioning?)**
+
 ## Approach to Analysis
 
 To analyze the data set, we took advantage of a command line utilities, a number of utilities that are available with twarc and twarc-repot, as well as [jq](https://stedolan.github.io/jq/). [twarc-report](https://github.com/pbinkley/twarc-report). twarc-report is a set of utilities "for generating reports from twarc collections using tools such as D3.js."[2] The graphs above were created with twarc-report.
@@ -91,6 +93,8 @@ $ sudo docker build --tag unshrtn:dev .
 $ sudo docker run -p 80:3000 -d -t unshrtn:dev
 $ cat elxn42-tweets-combined-deduplicated.json | ~/git/twarc/utils/unshorten.py > elxn42-tweets-combined-deduplicated-unshortened.json
 ```
+
+With the URLs, we were able to run subsequent analysis: from creating a subsequent web crawl using the corpus in order to launch further explorations of an #elxn42 web crawl, to comparing coverage within the #elxn42 URL corpus with the broader Internet Archive, and beyond. This sort of derivative dataset can be very useful, especially given the URL-centric nature of the Wayback Machine.
 
 ## Data Analysis and Results
 
