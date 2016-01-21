@@ -71,7 +71,21 @@ Search API: `twarc.py --search "#elxn42" > elxn42-search.json`
 
 Stream API: `twarc.py --stream "#elxn42" > elxn42-stream.json`
 
-**More here on the different approaches between Search/Stream - I liked the approach of running Stream and then using Search to fill in gaps... Nick could you explain a bit more? Also cron jobs, and the issue of the silent fail we encountered? (which is now fiexed, but might be worth mentioning?)**
+These two APIs complement each other well. The Search API provides historical search on a given query, such as #elxn42, stretching back somewhere between six and nine days of Tweets. Their API cautions that "the Search API is focused on relevance and not completeness. This means that some Tweets and users may be missing from search results."[10]
+
+For completeness, then, we can turn to the Streaming API. This gives "developers low latency access to Twitter's global stream of Tweet data," up to the aforementioned 1% volume.[11]
+
+A combination of the two is a recommended approach: the streaming API for the bulk collection, and the search API to fill in any gaps that may have happened when using the system.
+
+Once collected, tweets can be shared with other people through the tweet IDs, which can be rehydrated using twarc. As twarc's readme notes:
+
+    The Twitter API's Terms of Service prevent people from making large amounts of raw Twitter data available on the Web. The data can be used for research and archived for local use, but not shared with the world. Twitter does allow files of tweet identifiers to be shared, which can be useful when you would like to make a dataset of tweets available. You can then use Twitter's API to hydrate the data, or to retrieve the full JSON for each identifier. This is particularly important for verification of social media research.
+
+The command:
+
+`twarc.py --hydrate elxn42-tweet-ids.txt > elxn42-tweets.json`
+
+will recreate the original tweet(s) in json format, provided the content is still available on Twitter. If you wanted to use our dataset, for example, you could download it at our Scholars Portal [#elxn42 dataverse entry](http://dataverse.scholarsportal.info/dvn/dv/wahr/faces/study/StudyPage.xhtml?globalId=hdl:10864/11311&studyListingIndex=0_4f342bb422cc256e2cf4aeef2d99). If somebody deleted their tweet between the time of our collection and the time of your rehydration, you would not gain access to that content.
 
 ## Approach to Analysis
 
@@ -393,7 +407,7 @@ From the above, we can see that there were 1,203,867 total images tweets, repres
 
 As mentioned above, twarc has a mode called "hydrate". Hydrate allows a user to a take a set of tweet ids -- in this case you can use the data set we are working with here[4] -- and hydrate the tweets ids with the full tweet from the Twitter API. This process can be slow since, "Twitter limits users to 180 API requests every 15 minutes. Each request can hydrate (Twitter’s term for turning a Twitter up to 100 Tweet IDs using the statuses/lookup REST API call. So `80 requests * 100 tweets = 18,000 tweets/15 min = 72,000 tweets/hour`[5]." In our case, we began hydrating on November 21, and finished on November 23. The process took a little over 39 hours. In the end, we had a total of 2,832,270 tweets. Which means that 207,534 tweets deleted, giving us a 7.33% tweet churn.
 
-Terms of service prevent us from going into much detail on the deleted users, but several significant users were deleted. One, StopHarperToday, no longer exists as of writing. And another major account, 444_nal4b, appears to be a spammer account that extensively tweeted on the #elxn42 hashtag. While Twitter's user experience is arguably enhanced by the loss of spam tweets, they are an essential part of the Twitter experience and it is worth nothing that they may be significantly reduced in rehydrated Twitter databases. Futurehistorians may have difficulty studying the online advertisements of our day.
+Terms of service prevent us from going into much detail on the deleted users, but several significant users were deleted. One, StopHarperToday, no longer exists as of writing. And another major account, 444_nal4b, appears to be a spammer account that extensively tweeted on the #elxn42 hashtag. While Twitter's user experience is arguably enhanced by the loss of spam tweets, they are an essential part of the Twitter experience and it is worth nothing that they may be significantly reduced in rehydrated Twitter databases. Future historians may have difficulty studying the online advertisements of our day.
 
 We can go further here if you'd like.
 
@@ -439,6 +453,8 @@ In an era where web archiving and twitter collection can be seen as expensive lu
 [7]: http://hdl.handle.net/10864/11310 "Library and Archives Canada, #elxn42 tweets (42nd Canadian Federal Election), http://hdl.handle.net/10864/11310 V3 [Version]""
 [8]: http://arxiv.org/abs/1212.6177 "Ainsworth, Scott G., Ahmed AlSum, Hany SalahEldeen, Michele C. Weigle, and Michael L. Nelson. “How Much of the Web Is Archived?” arXiv:1212.6177 [cs], December 26, 2012. http://arxiv.org/abs/1212.6177"
 [9]: http://ijoc.org/index.php/ijoc/article/view/2171/1159 "K. Driscoll and S. Walker, “Big Data, Big Questions| Working Within a Black Box: Transparency in the Collection and Production of Big Twitter Data,” International Journal of Communication, vol. 8, no. 0, p. 20, Jun. 2014.""
+[10]: https://dev.twitter.com/rest/public/search "Twitter, 'Search API,' https://dev.twitter.com/rest/public/search"
+[11]: https://dev.twitter.com/streaming/overview "Twitter, 'Streaming API, https://dev.twitter.com/streaming/overview"
 
 * Ed Summers, Hugo van Kemenade, Peter Binkley, Nick Ruest, recrm, Stefano Costa, Eric Phetteplace, et al. ‘Twarc: v0.3.4.’ Zenodo, 2015. doi:10.5281/zenodo.31919.
 * Peter Binkley. 'twarc-report' GitHub, 2015. https://github.com/pbinkley/twarc-report
