@@ -79,13 +79,24 @@ A combination of the two is a recommended approach: the streaming API for the bu
 
 Once collected, tweets can be shared with other people through the tweet IDs, which can be rehydrated using twarc. As twarc's readme notes:
 
-    The Twitter API's Terms of Service prevent people from making large amounts of raw Twitter data available on the Web. The data can be used for research and archived for local use, but not shared with the world. Twitter does allow files of tweet identifiers to be shared, which can be useful when you would like to make a dataset of tweets available. You can then use Twitter's API to hydrate the data, or to retrieve the full JSON for each identifier. This is particularly important for verification of social media research.
+>The Twitter API's Terms of Service prevent people from making large amounts of raw Twitter data available on the Web. The data can be used for research and archived for local use, but not shared with the world. Twitter does allow files of tweet identifiers to be shared, which can be useful when you would like to make a dataset of tweets available. You can then use Twitter's API to hydrate the data, or to retrieve the full JSON for each identifier. This is particularly important for verification of social media research.
 
 The command:
 
 `twarc.py --hydrate elxn42-tweet-ids.txt > elxn42-tweets.json`
 
 will recreate the original tweet(s) in json format, provided the content is still available on Twitter. If you wanted to use our dataset, for example, you could download it at our Scholars Portal [#elxn42 dataverse entry](http://dataverse.scholarsportal.info/dvn/dv/wahr/faces/study/StudyPage.xhtml?globalId=hdl:10864/11311&studyListingIndex=0_4f342bb422cc256e2cf4aeef2d99). If somebody deleted their tweet between the time of our collection and the time of your rehydration, you would not gain access to that content.
+
+### Should You Collect?
+Beyond the technical question of how to collect tweets comes the ever-important question of should you, and if so, how to handle the question of consent? Strictly speaking, we have permission in accordance in a "legal sense," thanks to the Twitter Terms of Service. We can only capture public tweets, and given the tweets are public, we interpret that as consent in the broadest form to archive and preserve this material. Consent is not perpetual, as users may decide to make their account "private" after collection. Accordingly, when tweet ids are hydrated, only publicly accessible tweets are hydrated. So, if a tweet is delete in the period between our capture and hydration, the  tweet will not be hydrated. Similarly, if an account is public, and set to private in the period between our capture and hydration, the tweet will not be hydrated.
+
+Legal does not equal ethical, though. As Aaron Bady has noted, "[t]he act of linking or quoting someone who does not regard their twitter as public is only ethically fine if we regard the law as trumping the ethics of consent."[12] As researchers at the University of Southern California discovered with their "Black Twitter Project," many are uncomfortable with the prospect of their online content being harnessed without consent for research projects.[13] 
+
+Yet, if we do not archive this material, it could be lost forever: invaluable, diverse perspectives on unfolding events like the 2015 Canadian federal election. Collecting these tweets raises the prospect of histories not dominated by the mainstream media. We thus collect the material with the proviso that it needs to be ethically used by researchers. As Dorothy Kim and Eunsong Kim put it in their "#TwitterEthics Manifesto," academics and those using this material in their work need to rethink their approach:
+
+>In the end, the work, the credit, the compensation, and the view need to be a shared, collaborative process. Twitter and New Media journalism, the internet and technology involves all of us. The voices on the platform are multiple, collective, dissenting, singular, and loud. You don’t need to speak for us–we are talking. Cite us, ask us to write, get our permission.[14]
+
+We collect the material so that it can be used. Researchers need to be ethically aware. When distributing the Tweet IDs, we encourage them to use this material with respect.
 
 ## Approach to Analysis
 
@@ -109,17 +120,6 @@ $ cat elxn42-tweets-combined-deduplicated.json | ~/git/twarc/utils/unshorten.py 
 ```
 
 With the URLs, we were able to run subsequent analysis: from creating a subsequent web crawl using the corpus in order to launch further explorations of an #elxn42 web crawl, to comparing coverage within the #elxn42 URL corpus with the broader Internet Archive, and beyond. This sort of derivative dataset can be very useful, especially given the URL-centric nature of the Wayback Machine.
-
-### Should You Collect?
-Beyond the technical question of how to collect tweets comes the ever-important question of should you, and if so, how to handle the question of consent? Strictly speaking, we have permission in accordance in a "legal sense," thanks to the Twitter Terms of Service. We can only capture public tweets, and given the tweets are public, we interpret that as consent in the broadest form to archive and preserve this material. Consent is not perpetual, as users may decide to make their account "private" after collection. Accordingly, when tweet ids are hydrated, only publicly accessible tweets are hydrated. So, if a tweet is delete in the period between our capture and hydration, the  tweet will not be hydrated. Similarly, if an account is public, and set to private in the period between our capture and hydration, the tweet will not be hydrated.
-
-Legal does not equal ethical, though. As Aaron Bady has noted, "[t]he act of linking or quoting someone who does not regard their twitter as public is only ethically fine if we regard the law as trumping the ethics of consent."[12] As researchers at the University of Southern California discovered with their "Black Twitter Project," many are uncomfortable with the prospect of their online content being harnessed without consent for research projects.[13] 
-
-Yet, if we do not archive this material, it could be lost forever: invaluable, diverse perspectives on unfolding events like the 2015 Canadian federal election. Collecting these tweets raises the prospect of histories not dominated by the mainstream media. We thus collect the material with the proviso that it needs to be ethically used by researchers. As Dorothy Kim and Eunsong Kim put it in their "#TwitterEthics Manifesto," academics and those using this material in their work need to rethink their approach:
-
->In the end, the work, the credit, the compensation, and the view need to be a shared, collaborative process. Twitter and New Media journalism, the internet and technology involves all of us. The voices on the platform are multiple, collective, dissenting, singular, and loud. You don’t need to speak for us–we are talking. Cite us, ask us to write, get our permission.[14]
-
-We collect the material so that it can be used. Researchers need to be ethically aware. When distributing the Tweet IDs, we encourage them to use this material with respect.
 
 ## Data Analysis and Results
 
