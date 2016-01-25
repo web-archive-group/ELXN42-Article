@@ -110,6 +110,17 @@ $ cat elxn42-tweets-combined-deduplicated.json | ~/git/twarc/utils/unshorten.py 
 
 With the URLs, we were able to run subsequent analysis: from creating a subsequent web crawl using the corpus in order to launch further explorations of an #elxn42 web crawl, to comparing coverage within the #elxn42 URL corpus with the broader Internet Archive, and beyond. This sort of derivative dataset can be very useful, especially given the URL-centric nature of the Wayback Machine.
 
+### Should You Collect?
+Beyond the technical question of how to collect tweets comes the ever-important question of should you, and if so, how to handle the question of consent? Strictly speaking, we have permission in accordance in a "legal sense," thanks to the Twitter Terms of Service. We can only capture public tweets, and given the tweets are public, we interpret that as consent in the broadest form to archive and preserve this material. Consent is not perpetual, as users may decide to make their account "private" after collection. Accordingly, when tweet ids are hydrated, only publicly accessible tweets are hydrated. So, if a tweet is delete in the period between our capture and hydration, the  tweet will not be hydrated. Similarly, if an account is public, and set to private in the period between our capture and hydration, the tweet will not be hydrated.
+
+Legal does not equal ethical, though. As Aaron Bady has noted, "[t]he act of linking or quoting someone who does not regard their twitter as public is only ethically fine if we regard the law as trumping the ethics of consent."[12] As researchers at the University of Southern California discovered with their "Black Twitter Project," many are uncomfortable with the prospect of their online content being harnessed without consent for research projects.[13] 
+
+Yet, if we do not archive this material, it could be lost forever: invaluable, diverse perspectives on unfolding events like the 2015 Canadian federal election. Collecting these tweets raises the prospect of histories not dominated by the mainstream media. We thus collect the material with the proviso that it needs to be ethically used by researchers. As Dorothy Kim and Eunsong Kim put it in their "#TwitterEthics Manifesto," academics and those using this material in their work need to rethink their approach:
+
+>In the end, the work, the credit, the compensation, and the view need to be a shared, collaborative process. Twitter and New Media journalism, the internet and technology involves all of us. The voices on the platform are multiple, collective, dissenting, singular, and loud. You don’t need to speak for us–we are talking. Cite us, ask us to write, get our permission.[14]
+
+We collect the material so that it can be used. Researchers need to be ethically aware. When distributing the Tweet IDs, we encourage them to use this material with respect.
+
 ## Data Analysis and Results
 
 ### Text
@@ -455,6 +466,9 @@ In an era where web archiving and twitter collection can be seen as expensive lu
 [9]: http://ijoc.org/index.php/ijoc/article/view/2171/1159 "K. Driscoll and S. Walker, “Big Data, Big Questions| Working Within a Black Box: Transparency in the Collection and Production of Big Twitter Data,” International Journal of Communication, vol. 8, no. 0, p. 20, Jun. 2014.""
 [10]: https://dev.twitter.com/rest/public/search "Twitter, 'Search API,' https://dev.twitter.com/rest/public/search"
 [11]: https://dev.twitter.com/streaming/overview "Twitter, 'Streaming API, https://dev.twitter.com/streaming/overview"
+[12]: http://thenewinquiry.com/blogs/zunguzungu/notallpublic-heartburn-twitter/ "A. Bady, #NotAllPublic, Heartburn, Twitter, 10 June 2014, http://thenewinquiry.com/blogs/zunguzungu/notallpublic-heartburn-twitter/, last accessed 16 June 2015"
+[13]: http://www.cbc.ca/newsblogs/yourcommunity/2014/09/universitys-black-twitter-study-generates-controversy.html "Lauren O'Neil, "University's 'Black Twitter' study generates controversy," 4 September 2014, http://www.cbc.ca/newsblogs/yourcommunity/2014/09/universitys-black-twitter-study-generates-controversy.html."
+[14]: https://modelviewculture.com/pieces/the-twitterethics-manifesto "Dorothy Kim and Eunsong Kim, "The #TwitterEthics Manifesto," 7 April 2014, https://modelviewculture.com/pieces/the-twitterethics-manifesto."
 
 * Ed Summers, Hugo van Kemenade, Peter Binkley, Nick Ruest, recrm, Stefano Costa, Eric Phetteplace, et al. ‘Twarc: v0.3.4.’ Zenodo, 2015. doi:10.5281/zenodo.31919.
 * Peter Binkley. 'twarc-report' GitHub, 2015. https://github.com/pbinkley/twarc-report
