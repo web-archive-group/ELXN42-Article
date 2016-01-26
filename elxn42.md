@@ -368,14 +368,11 @@ The top 10 domains that were tweeted were as follows:
 | 9.   | 39989   | twimg.com             |
 | 10.  | 35280   | macleans.ca           |
 
-**This paragraph needs a re-write given updated data**
 We can get a sense of how social media shapes what people share, although old legacy media was surprisingly well-represented in the Canadian context: the Canada Broadcast Corporation (especially their election day dashboard), the two highest-circulation newspapers the *Globe and Mail* and *Toronto Star*, and popular television networks CTV and Global News. While the *Huffington Post*'s Canadian edition made an appearance, we were surprised by the degree to which traditional media dominated.
 
-The domains shared also affected their permanent archiving. By comparing this list of unique URLs to the Internet Archive's [Wayback Availability JSON API](https://archive.org/help/wayback_api.php), which takes a user-provided URL and determines whether there is an archived, accessible copy in the main [Wayback Machine](http://archive.org/web), we found that of the 263,708 unique URLs, 221,491 were not found. This gives the Wayback Machine a coverage rate of 16.01% in our corpus. This is largely due to the domains that are largely excluded from the Wayback Machine: Twitter, Facebook, and YouTube, for example.
+The domains shared also affected their permanent archiving. By comparing this list of unique URLs to the Internet Archive's [CDX Availability API](https://github.com/internetarchive/wayback/tree/master/wayback-cdx-server), which takes a user-provided URL and determines whether there is an archived, accessible copy in the main [Wayback Machine](http://archive.org/web), we found that of the 334,841 unique URLs, only 20.34% or 68,112 existed at all in the Wayback Machine. Of those 68,112 URLs, only 33,685 had been archived relatively recently, between August and December 2015. This is largely due to the domains that are largely excluded from the Wayback Machine: Twitter, Facebook, and YouTube, for example.
 
-Given that there would be a delay between now and when the websites are included in the Wayback Machine – in many cases between six and 24 months – this is reasonable coverage (Ainsworth et al, 2013). We plan to periodically revisit these results at quarterly intervals, to see how quickly these URLs are ingested into the Wayback Machine.
-
-This will help contribute to a growing body of literature around how many URLs are actually included in the Wayback Machine.
+This speaks to the importance of social media crawls. 334,841 links were shared by everyday people during the election, and only roughly one in five would appear in the global Wayback Machine. Twitter archiving is a useful complement to a broader web archiving strategy.
 
 ### Embedded images
 
