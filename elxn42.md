@@ -523,6 +523,10 @@ Beginning by identifying a hashtag of interest, `twarc` can be used to assemble 
 
 In an era where web archiving and twitter collection can be seen as expensive luxuries, this paper shows how for a relatively small investment of computing power, bandwidth, and storage, people can create and analyze their own Twitter archives. We hope that our #elxn42 experience can serve as an illustrative model.
 
+## Acknowledgements
+
+We'd like to graciously thank the support of the Social Sciences and Humanities Research Council of Canada, which has supported this work with an Insight Grant (435-2015-0011). Thanks as well to *names of folks who give us help/suggestions/amazing insights here via GitHub :)*
+
 ## References
 
 [1]: http://dx.doi.org/10.5281/zenodo.31919 "Ed Summers, Hugo van Kemenade, Peter Binkley, Nick Ruest, recrm, Stefano Costa, Eric Phetteplace, et al. ‘Twarc: v0.3.4.’ Zenodo, 2015. doi:10.5281/zenodo.31919."
