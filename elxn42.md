@@ -10,13 +10,13 @@ While Twitter is not a representative sample of broader society - Pew Research n
 
 On August 3, 2015, the team initiated both a Search API and Stream API collection with twarc using the hashtag #elxn42. Data collection ceased on November 5, 2015, the day after Justin Trudeau was sworn in as the 42nd Prime Minister of Canada. We collected for a total of 102 days, 13 hours and 50 minutes.
 
-To analyze the data set, we took advantage of a number of utilities that are available within twarc and twarc-report, as well as `jq`, Mathematica, and Apache Spark Notebook. In accordance with the Twitter ToS, we made the tweet IDs and other derivative data available in a data repository.
+To analyze the data set, we took advantage of a number of utilities that are available within twarc and twarc-report, as well as `jq`, Mathematica, and Apache Spark Notebook. In accordance with the Twitter Terms of Service, we made the tweet IDs and other derivative data available in a data repository.
 
 Our analytics included:
 
 - breaking tweet text down by day to track change over time;
 - client analysis, allowing us to see how the scale of mobile devices affected medium interactions;
-- URL analysis, comparing both to Archive-It collections and the Wayback Availabilty API to add to our understanding of crawl completeness;
+- URL analysis, comparing both to Archive-It collections and the [Wayback Availability API](https://archive.org/help/wayback_api.php) to add to our understanding of crawl completeness;
 - and image analysis, using an archive of extracted images.
 
 Our article introduces our collecting work, the analysis we have done, and provides a framework for other collecting institutions to do similar work with our off-the-shelf open-source tools.
@@ -45,7 +45,7 @@ This article walks users through these five steps, with an eye to presenting thi
 
 The [Web Archives for Historical Research Group](https://uwaterloo.ca/web-archive-group/) began capturing #elxn42 tweets on August 3, 2015 with [twarc](https://github.com/edsu/twarc). "twarc is a command line tool and Python library for archiving Twitter JSON data. Each tweet is represented as a JSON object that is exactly what was returned from the Twitter API. Tweets are stored as line-oriented JSON. It twarc runs in three modes: search, stream and hydrate. When running in each mode twarc will stop and resume activity in order to work within the Twitter API's rate limits."[1]
 
-On August 3, the team initiated both a search API and stream API collection with twarc using the hashtag #elxn42. The search API was used to gather any tweets with the #elxn42 hashtag before initial collection date. The stream collection mode was initiated with the intention to gather #elxn42 tweet for the entirity of the election. However, we noticed that twarc had silently failed during September, and the research team did not notice. As a result we lost 27 days in total. Upon realization of the collection failure, the research team immediately began collecting via the stream API and began search API collection (allows collection back 7-9 days) simultaneously. Data Collection was stopped on November 5, 2015, the day after Justin Trudeau was sworn in as the 42nd Prime Minister of Canada. A total of 102 days, 13hrs and 50 minutes.
+On August 3, the team initiated both a search API and stream API collection with twarc using the hashtag #elxn42. The search API was used to gather any tweets with the #elxn42 hashtag before initial collection date. The stream collection mode was initiated with the intention to gather #elxn42 tweet for the entirety of the election. However, we noticed that twarc had silently failed during September, and the research team did not notice. As a result we lost 27 days in total. Upon realization of the collection failure, the research team immediately began collecting via the stream API and began search API collection (allows collection back 7-9 days) simultaneously. Data Collection was stopped on November 5, 2015, the day after Justin Trudeau was sworn in as the 42nd Prime Minister of Canada. A total of 102 days, 13hrs and 50 minutes.
 
 ![tweet times](tweet-times-original.png)
 
@@ -77,7 +77,7 @@ For completeness, then, we can turn to the Streaming API. This gives "developers
 
 A combination of the two is a recommended approach: the streaming API for the bulk collection, and the search API to fill in any gaps that may have happened when using the system.
 
-Once collected, tweets can be shared with other people through the tweet IDs, which can be rehydrated using twarc. As twarc's readme notes:
+Once collected, tweets can be shared with other people through the tweet IDs, which can be rehydrated using twarc. As twarc's README notes:
 
 >The Twitter API's Terms of Service prevent people from making large amounts of raw Twitter data available on the Web. The data can be used for research and archived for local use, but not shared with the world. Twitter does allow files of tweet identifiers to be shared, which can be useful when you would like to make a dataset of tweets available. You can then use Twitter's API to hydrate the data, or to retrieve the full JSON for each identifier. This is particularly important for verification of social media research.
 
@@ -136,6 +136,7 @@ We were also interested in contrasting Twitter data by day, to see how it involv
 
 ```python
 #!/usr/bin/env python
+#CC0 1.0 Universal
 from __future__ import print_function
 
 import sys
@@ -148,7 +149,6 @@ import pandas as pd
 import datetime
 import io
 
-# parse command-line args
 eastern = pytz.timezone('US/Eastern')
 start_date = dateutil.parser.parse("25-July-2015")
 start_date = eastern.localize(start_date)
@@ -179,7 +179,7 @@ Once broken into dates, we could run further analysis. Built into `twarc` is the
 $ python ~/git/twarc/utils/wordcloud.py elxn42-tweets-18-oct-2016.json > wordcloud-18-oct-2016.html
 ```
 
-While word clouds have considerable limitations, especially in the occulision of context around a given keyword, the simplicity of the visualization - where the more a word appears the larger it is - can find overall trends.
+While word clouds have considerable limitations, especially in the occlusion of context around a given keyword, the simplicity of the visualization - where the more a word appears the larger it is - can find overall trends.
 
 The ensuing results can be seen below:
 
@@ -227,7 +227,7 @@ $ python ~/git/twarc/utils/geo.py elxn42-tweets-combined-deduplicated.json > elx
 $ cat elxn42-tweets-with-geo.json | wc -1
 5370
 ```
-We were also able to create a [geojson](geojson.org) file of all the tweets with geographic information associated with them. With this geojson file, we were then able to map the tweets fairly simpy with [Leaflet.js](http://leafletjs.com).
+We were also able to create a [geojson](geojson.org) file of all the tweets with geographic information associated with them. With this geojson file, we were then able to map the tweets fairly simply with [Leaflet.js](http://leafletjs.com).
 
 Using `geojson.py` from twarc utilities:
 ```bash
@@ -426,7 +426,7 @@ https://medium.com/on-archivy/on-forgetting-e01a2b95272
 * 444_nal4b -- appears to be spam
 
 **Should we try to look for any patterns in the difference list? Should we also double up the analysis about, and see if there is any odd things?**
-**TODO -- Nick needs to create a diff of ids**
+**If we should, TODO -- Nick needs to create a diff of ids**
 
 ## Integrating Twitter Archiving with Web Archiving
 
@@ -476,3 +476,8 @@ In an era where web archiving and twitter collection can be seen as expensive lu
 * Library and Archives Canada, #elxn42 tweets (42nd Canadian Federal Election), http://hdl.handle.net/10864/11310 V3 [Version]"
 * Ainsworth, Scott G., Ahmed AlSum, Hany SalahEldeen, Michele C. Weigle, and Michael L. Nelson. "How Much of the Web Is Archived?" arXiv:1212.6177 [cs], December 26, 2012. http://arxiv.org/abs/1212.6177
 * K. Driscoll and S. Walker, "Big Data, Big Questions| Working Within a Black Box: Transparency in the Collection and Production of Big Twitter Data," International Journal of Communication, vol. 8, no. 0, p. 20, Jun. 2014.
+* "Twitter, 'Search API,' https://dev.twitter.com/rest/public/search"
+* "Twitter, 'Streaming API, https://dev.twitter.com/streaming/overview"
+* A. Bady, #NotAllPublic, Heartburn, Twitter, 10 June 2014, http://thenewinquiry.com/blogs/zunguzungu/notallpublic-heartburn-twitter/, last accessed 16 June 2015
+* Lauren O'Neil, "University's 'Black Twitter' study generates controversy," 4 September 2014, http://www.cbc.ca/newsblogs/yourcommunity/2014/09/universitys-black-twitter-study-generates-controversy.html
+* Dorothy Kim and Eunsong Kim, "The #TwitterEthics Manifesto," 7 April 2014, https://modelviewculture.com/pieces/the-twitterethics-manifesto
