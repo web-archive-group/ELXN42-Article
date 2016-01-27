@@ -51,7 +51,7 @@ On August 3, the team initiated both a search API and stream API collection with
 
 In retrospect, the research team recommends using a combination of collection via the search and streaming API. A streaming API collection over the period of the capture, as well weekly search API collections. Then, at the end of data collection concatenating all files together, and deduplicating the entire dataset.
 
-Library and Archives Canada (LAC) also collected the #elxn42 hashtag during a similar time period; August 11, 2015 - October 28, 2015. The team made use of the LAC #elxn42 capture by downloading their tweet id dataset[7], and hydrating it. Once the LAC dataset was hydrated, the team combined their original dataset[4] with the LAC dataset[7], and deduplicated it[6].
+Library and Archives Canada (LAC) also collected the #elxn42 hashtag, using the Search API, during a similar time period; August 11, 2015 - October 28, 2015. The team made use of the LAC #elxn42 capture by downloading their tweet id dataset[7], and hydrating it. Once the LAC dataset was hydrated, the team combined their original dataset[4] with the LAC dataset[7], and deduplicated it[6].
 
 ```bash
 $ twarc.py --hydrate elxn42-tweets-LAC.txt > elxn42-tweets-LAC.json
@@ -61,7 +61,7 @@ $ python ~/git/twarc/utils/deduplicate.py elxn42-tweets-combined.json > elxn42-t
 
 ![tweet times](tweet-times.png)
 
-This does not necesasarily mean that between LAC and our research group that we captured all tweets. Driscoll and Walker have shown substantial differences in what is captured using Twitter's commercial Gnip service versus the streaming API.[9] While the #elxn42 hashtag never exceeded the hard limit of 1% of all tweets enacted using the streaming API – which comes into play if the volume of tweets you are capturing exceeds 1%, common in cases such as high-profile events (the Paris shootings or an American presidential debate) - there is still a chance that some content was not collected.
+This does not necessarily mean that between LAC and our research group that we captured all tweets. Driscoll and Walker have shown substantial differences in what is captured using Twitter's commercial Gnip service versus the streaming API.[9] While the #elxn42 hashtag never exceeded the hard limit of 1% of all tweets enacted using the streaming API – which comes into play if the volume of tweets you are capturing exceeds 1%, common in cases such as high-profile events (the Paris shootings or an American presidential debate) - there is still a chance that some content was not collected.
 
 ### How do you collect?
 
@@ -511,7 +511,7 @@ In an era where web archiving and twitter collection can be seen as expensive lu
 
 ## Acknowledgements
 
-We'd like to graciously thank the support of the Social Sciences and Humanities Research Council of Canada, which has supported this work with an Insight Grant (435-2015-0011). Thanks as well to *names of folks who give us help/suggestions/amazing insights here via GitHub :) -- Jason Colditz,*
+We'd like to graciously thank the support of the Social Sciences and Humanities Research Council of Canada, which has supported this work with an Insight Grant (435-2015-0011). As well as Russell White and Tom Smyth from Library and Archives Canada for collecting and sharing #elnx42 tweets. Thanks as well to *names of folks who give us help/suggestions/amazing insights here via GitHub :) -- Jason Colditz,*
 
 ## References
 
