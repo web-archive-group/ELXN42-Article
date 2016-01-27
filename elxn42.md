@@ -511,7 +511,7 @@ In an era where web archiving and twitter collection can be seen as expensive lu
 
 ## Acknowledgements
 
-We'd like to graciously thank the support of the Social Sciences and Humanities Research Council of Canada, which has supported this work with an Insight Grant (435-2015-0011). As well as Russell White and Tom Smyth from Library and Archives Canada for collecting and sharing #elnx42 tweets. Thanks as well to *names of folks who give us help/suggestions/amazing insights here via GitHub :) -- Jason Colditz,*
+We'd like to graciously thank the support of the Social Sciences and Humanities Research Council of Canada, which has supported this work with an Insight Grant (435-2015-0011). As well as Russell White and Tom Smyth from Library and Archives Canada for collecting and sharing #elnx42 tweets. Thanks as well to *names of folks who give us help/suggestions/amazing insights here via GitHub :) -- Jason Colditz, Zack Macdonald, Shawn Graham*
 
 ## References
 
