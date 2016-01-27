@@ -10,7 +10,7 @@ While Twitter is not a representative sample of broader society - Pew Research n
 
 On August 3, 2015, the team initiated both a Search API and Stream API collection with twarc using the hashtag #elxn42. Data collection ceased on November 5, 2015, the day after Justin Trudeau was sworn in as the 42nd Prime Minister of Canada. We collected for a total of 102 days, 13 hours and 50 minutes.
 
-To analyze the data set, we took advantage of a number of command line tools, utilities that are available within twarc, twarc-report, and `jq`. In accordance with the [Twitter Developer Agreement & Policy](https://dev.twitter.com/overview/terms/agreement-and-policy), we made the tweet IDs and other derivative data available in a data repository.
+To analyze the data set, we took advantage of a number of command line tools, utilities that are available within twarc, twarc-report, and `jq`. In accordance with the [Twitter Developer Agreement & Policy](https://dev.twitter.com/overview/terms/agreement-and-policy), we made the tweet IDs and other derivative data available in a data repository. This allows other people to use our dataset, cite our dataset, and enhance their own research projects by drawing on #elxn42 tweets.
 
 Our analytics included:
 
@@ -504,6 +504,8 @@ Note for writing: I created this list by getting a list of the 50 domains, the l
 This article has outlined a light-weight and open-source method of collecting and analyzing Twitter events. The case study of the 2015 Canadian federal election hashtag, #elxn42, is roughly analogous to other medium-scale, longitudinal events: it lacked the severe spikes and pitfalls of an event such as the Paris shootings or an American election (in which case a commercial approach would be necessary for full scoping). Yet it is a perfect fit for many events of interest to libraries, archives, and special collections.
 
 Beginning by identifying a hashtag of interest, `twarc` can be used to assemble a full dataset of tweets. `twarc-report`, `twarc`'s utilities, and other tools discussed here can all give users a rough sense of what happened within the collection. These distant reading approaches could help isolate particular days, users, or popular tweets for researchers to study. They could not read all four million tweets, but they could use these tools to find the right ones to investigate further. While Twitter's [Developer Agreement & Policy](https://dev.twitter.com/overview/terms/agreement-and-policy) prevent the wholescale sharing of the collected data itself, rosters of Tweet IDs can be easily shared using institutional repositories or other sharing platforms, allowing other users to "rehydrate" their own tweets. While this has the downside of removing tweets deleted until the moment of rehydration, this allows one to continually monitor "churn" within a collection.
+
+Others may be interested in using this project to either continue their own work on the #elxn42 corpus - political scientists studying an election, for example - or as an illustrative model for other unfolding events. For those interested in using the tweet data, you [download them yourselves here](http://hdl.handle.net/10864/11311). 
 
 In an era where web archiving and twitter collection can be seen as expensive luxuries, this article shows how for a relatively small investment of computing power, bandwidth, and storage, people can create and analyze their own Twitter archives. We hope that our #elxn42 experience can serve as an illustrative model.
 
