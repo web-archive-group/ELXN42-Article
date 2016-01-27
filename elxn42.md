@@ -133,7 +133,7 @@ $ jq (cat elxn42-tweets.json | jq -c '.text' | cat > elxn42-tweets-text.txt)
 
 This was useful for working with text analysis software, such as custom scripts written in R, Python, Mathematica, or even using the accessible online platform [Voyant-Tools](http://voyant-tools.org/).
 
-We were also interested in contrasting Twitter data by day, to see how it involves. To do so, we used this following script:
+We were also interested in contrasting Twitter data by day, to see how it evolves. To do so, we used this following script:
 
 ```python
 #!/usr/bin/env python
@@ -505,13 +505,13 @@ This article has outlined a light-weight and open-source method of collecting an
 
 Beginning by identifying a hashtag of interest, `twarc` can be used to assemble a full dataset of tweets. `twarc-report`, `twarc`'s utilities, and other tools discussed here can all give users a rough sense of what happened within the collection. These distant reading approaches could help isolate particular days, users, or popular tweets for researchers to study. They could not read all four million tweets, but they could use these tools to find the right ones to investigate further. While Twitter's [Developer Agreement & Policy](https://dev.twitter.com/overview/terms/agreement-and-policy) prevent the wholescale sharing of the collected data itself, rosters of Tweet IDs can be easily shared using institutional repositories or other sharing platforms, allowing other users to "rehydrate" their own tweets. While this has the downside of removing tweets deleted until the moment of rehydration, this allows one to continually monitor "churn" within a collection.
 
-Others may be interested in using this project to either continue their own work on the #elxn42 corpus - political scientists studying an election, for example - or as an illustrative model for other unfolding events. For those interested in using the tweet data, you [download them yourselves here](http://hdl.handle.net/10864/11311). 
+Others may be interested in using this project to either continue their own work on the #elxn42 corpus - political scientists studying an election, for example - or as an illustrative model for other unfolding events. For those interested in using the tweet data, you [download them yourselves here](http://hdl.handle.net/10864/11311).
 
 In an era where web archiving and twitter collection can be seen as expensive luxuries, this article shows how for a relatively small investment of computing power, bandwidth, and storage, people can create and analyze their own Twitter archives. We hope that our #elxn42 experience can serve as an illustrative model.
 
 ## Acknowledgements
 
-We'd like to graciously thank the support of the Social Sciences and Humanities Research Council of Canada, which has supported this work with an Insight Grant (435-2015-0011). Thanks as well to *names of folks who give us help/suggestions/amazing insights here via GitHub :)*
+We'd like to graciously thank the support of the Social Sciences and Humanities Research Council of Canada, which has supported this work with an Insight Grant (435-2015-0011). Thanks as well to *names of folks who give us help/suggestions/amazing insights here via GitHub :) -- Jason Colditz,*
 
 ## References
 
