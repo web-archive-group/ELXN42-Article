@@ -4,13 +4,13 @@ Nick Ruest (York University), Ian Milligan (University of Waterloo)
 
 ## Abstract
 
-This article examines the tools, approaches, collaboration, and findings of the Web Archives for Historical Research Group around the capture and analysis of about 4M tweets during the 2015 Canadian Federal Election. We hope that national libraries and other institutions will find our model useful as they consider how to archive ongoing events using Twitter.
+This article examines the tools, approaches, collaboration, and findings of the Web Archives for Historical Research Group around the capture and analysis of about 4M tweets during the 2015 Canadian Federal Election. We hope that national libraries and other heritage institutions will find our model useful as they consider how to capture, preserve, and analyze ongoing events using Twitter.
 
 While Twitter is not a representative sample of broader society - Pew Research notes that it skews young, college-educated, and affluent (above $50,000 household income) – Twitter still represents an exponential increase in the amount of information generated, retained, and preserved from non-elite people. Therefore, when historians study the 2015 federal election, Twitter will be a prime source.
 
 On August 3, 2015, the team initiated both a Search API and Stream API collection with twarc using the hashtag #elxn42. Data collection ceased on November 5, 2015, the day after Justin Trudeau was sworn in as the 42nd Prime Minister of Canada. We collected for a total of 102 days, 13 hours and 50 minutes.
 
-To analyze the data set, we took advantage of a number of utilities that are available within twarc and twarc-report, as well as `jq`, Mathematica, and Apache Spark Notebook. In accordance with the [Twitter Developer Agreement & Policy](https://dev.twitter.com/overview/terms/agreement-and-policy), we made the tweet IDs and other derivative data available in a data repository.
+To analyze the data set, we took advantage of a number of command line tools, utilities that are available within twarc, twarc-report, and `jq`. In accordance with the [Twitter Developer Agreement & Policy](https://dev.twitter.com/overview/terms/agreement-and-policy), we made the tweet IDs and other derivative data available in a data repository.
 
 Our analytics included:
 
@@ -61,11 +61,11 @@ $ python ~/git/twarc/utils/deduplicate.py elxn42-tweets-combined.json > elxn42-t
 
 ![tweet times](tweet-times.png)
 
-This does not necesasarily mean that between LAC and our research group that we captured all tweets. Driscoll and Walker have shown substantial differences in what is captured using Twitter's commercial Gnip service versus the streaming API.[9] While the #elxn42 hashtag never exceeded the hard limit of 1% of all tweets enacted using the streaming API – which comes into play if the volume of tweets you are downloading exceeds 1%, common in cases such as high-profile events (the Paris shootings or an American presidential debate) - there is still a chance that some content was not collected.
+This does not necesasarily mean that between LAC and our research group that we captured all tweets. Driscoll and Walker have shown substantial differences in what is captured using Twitter's commercial Gnip service versus the streaming API.[9] While the #elxn42 hashtag never exceeded the hard limit of 1% of all tweets enacted using the streaming API – which comes into play if the volume of tweets you are capturing exceeds 1%, common in cases such as high-profile events (the Paris shootings or an American presidential debate) - there is still a chance that some content was not collected.
 
 ### How do you collect?
 
-Collecting tweets is very straight forward. Once you install twarc, can collect tweets using the Twitter Stream and Search APIs:
+Collecting tweets is very straight forward. Once you [install and configure twarc](https://github.com/edsu/twarc#install), you can collect tweets using the Twitter Stream and Search APIs:
 
 Search API: `twarc.py --search "#elxn42" > elxn42-search.json`
 
@@ -85,7 +85,7 @@ The command:
 
 `twarc.py --hydrate elxn42-tweet-ids.txt > elxn42-tweets.json`
 
-will recreate the original tweet(s) in json format, provided the content is still available on Twitter. If you wanted to use our dataset, for example, you could download it at our Scholars Portal [#elxn42 dataverse entry](http://dataverse.scholarsportal.info/dvn/dv/wahr/faces/study/StudyPage.xhtml?globalId=hdl:10864/11311&studyListingIndex=0_4f342bb422cc256e2cf4aeef2d99). If somebody deleted their tweet between the time of our collection and the time of your rehydration, you would not gain access to that content.
+will recreate the original tweet(s) in json format, provided the content is still available on Twitter. If you wanted to use our dataset, for example, you could download it from our [#elxn42 study](http://hdl.handle.net/10864/11311) in Scholars Portal Dataverse. If a user deleted their tweet between the time of our collection and the time of your rehydration, you would not gain access to that tweet.
 
 ### Should You Collect?
 
@@ -101,11 +101,11 @@ We collect the material so that it can be used. Researchers need to be ethically
 
 ## Approach to Analysis
 
-To analyze the data set, we took advantage of a command line utilities, a number of utilities that are available with twarc and twarc-repot, as well as [jq](https://stedolan.github.io/jq/). [twarc-report](https://github.com/pbinkley/twarc-report). twarc-report is a set of utilities "for generating reports from twarc collections using tools such as D3.js."[2] The graphs above were created with twarc-report.
+To analyze the data set, we took advantage of a command line utilities, a number of utilities that are available with twarc and [twarc-report](https://github.com/pbinkley/twarc-report), as well as [jq](https://stedolan.github.io/jq/). twarc-report is a set of utilities "for generating reports from twarc collections using tools such as D3.js."[2] The timeline graphs above were created with twarc-report.
 
 `python ~/git/twarc-report/d3times.py elxn42-tweets-combined-deduplicated.json -a -o embed -t local -i 24H > elxn42-times.html`
 
-Upon completion of capturing #elxn42, the team immediately began aggregating their dataset into a single file. The team began with 12 different line oriented JSON object files totaling 22GB and 4,117,753 undeduplicated tweets. These 12 files were aggregated into a single file: `cat *json > elxn42-tweets.json`. Once aggregated, the dataset was validated with [`validate.py`](https://github.com/edsu/twarc/blob/master/utils/validate.py), and the deduplicated (we have to dedupe giving the combination of search API and stream API collection modes with twarc) using [`deduplicate.py`](https://github.com/edsu/twarc/blob/master/utils/deduplicate.py). Once deduplicated, we were able to come up with the number of tweets collected. Since each tweet is a single JSON object representing a single line in the file, we were able to quickly calculate with simple command line utilities:
+Upon completion of capturing #elxn42, the team immediately began aggregating their dataset into a single file. The team began with 12 different line oriented JSON object files totaling 22GB and 4,117,753 undeduplicated tweets. These 12 files were aggregated into a single file: `cat *json > elxn42-tweets.json`. Once aggregated, the dataset was validated with [`validate.py`](https://github.com/edsu/twarc/blob/master/utils/validate.py), and the deduplicated (we have to dedupe given the combination of Search API and Stream API collection modes with twarc) using [`deduplicate.py`](https://github.com/edsu/twarc/blob/master/utils/deduplicate.py). Once deduplicated, we were able to come up with the number of tweets collected. Since each tweet is a single JSON object representing a single line in the file, we were able to quickly calculate with simple command line utilities:
 
 ```bash
 $ cat elxn42-tweets-combined-deduplicated.json | wc -l
@@ -189,8 +189,8 @@ The ensuing results can be seen below:
 Here we can see the following transition in the tweets:
 
 - 17 October 2015: We see the keyword "Harper" is the most prominent one, as it was throughout much of the election. As the polarizing, incumbent Prime Minister the election was in some ways a referendum on his leadership.
-- 18 October 2015: The day before election day. Vote becomes the most prominent, as people want exhort people to be ready for the polls. No one political party dominates, but the word "conservative" remains the most frequent.
-- 19 October 2015: Election day. We see Vote dominate, as well as the word "Liberal." This was mostly reflecting the widely retweeted announcement of the Liberal Party of Canada's victory that evening.
+- 18 October 2015: The day before election day. "Vote" becomes the most prominent, as people want exhort people to be ready for the polls. No one political party dominates, but the word "conservative" remains the most frequent.
+- 19 October 2015: Election day. We see "Vote" dominate, as well as the word "Liberal." This was mostly reflecting the widely retweeted announcement of the Liberal Party of Canada's victory that evening.
 - 20 October 2015: The new Prime Minister Trudeau is the topic of the day, as well as his first name: "Justin."
 
 At a glance, we are seeing a major narrative within the tweets.
@@ -228,15 +228,71 @@ $ python ~/git/twarc/utils/geo.py elxn42-tweets-combined-deduplicated.json > elx
 $ cat elxn42-tweets-with-geo.json | wc -1
 5370
 ```
-We were also able to create a [geojson](geojson.org) file of all the tweets with geographic information associated with them. With this geojson file, we were then able to map the tweets fairly simply with [Leaflet.js](http://leafletjs.com).
+We were also able to create a [geoJSON](geojson.org) file of all the tweets with geographic information associated with them. With this geojson file, we were then able to map the tweets fairly simply with [Leaflet.js](http://leafletjs.com).
 
 Using `geojson.py` from twarc utilities:
 ```bash
 $ python ~/git/twarc/utils/geojson.py elxn42-tweets-combined-deduplicated.json > elxn42-tweets.geojson
 ```
-Place holder for now: https://gist.github.com/ruebot/6f1960198c3dbf92ae6d or http://ruebot.net/page/elxn42-tweets-map
 
-Can't embed all the HTML and javascript in here. Maybe we can pull this off with Code4Lib Journal if it is published. **Let's embed them!**
+Using the geoJSON file, we can put them on an interactive map with [leaflet.js](http://leafletjs.com/) with some simple HTML and JavaScript boilerplate:
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>#elxn42 tweets with leaflet.js</title>
+  </head>
+  <body>
+    <script src="http://ruebot.net/d3.v3.min.js"></script>
+    <script src="http://ruebot.net/d3.layout.cloud.js"></script>
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7/leaflet.css" />
+    <script src="http://cdn.leafletjs.com/leaflet-0.7/leaflet.js"></script>
+    <script src="http://ruebot.net/files/elxn42-tweets.geojson" type="text/javascript"></script>
+    <link rel="stylesheet" href="http://leaflet.github.io/Leaflet.markercluster/dist/MarkerCluster.css" />
+    <link rel="stylesheet" href="http://leaflet.github.io/Leaflet.markercluster/dist/MarkerCluster.Default.css" />
+    <script src="http://leaflet.github.io/Leaflet.markercluster/dist/leaflet.markercluster-src.js"></script>
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="https://raw.github.com/jasondavies/d3-cloud/master/d3.layout.cloud.js"></script>
+
+    <div id="map" style="width: 720px; height: 450px;border: 1px solid #ccc;"></div>
+    <style type="text/css">
+      .leaflet-popup-content-wrapper .leaflet-popup-content {
+        width:250px !important;
+      }
+    </style>
+
+
+    <script type="text/javascript">
+
+          var tiles = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+            maxZoom: 18,
+            attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+          });
+
+          var map = L.map('map').addLayer(tiles);
+
+          var markers = L.markerClusterGroup();
+
+          var geoJsonLayer = L.geoJson(elxn42, {
+            onEachFeature: function (feature, layer) {
+            layer.bindPopup('<img src="'+ feature.properties.profile_image_url +'" /><p><b>@'+ feature.properties.screen_name +'</b></p><p><a href="'+ feature.properties.url +'" target="_blank">'+ feature.properties.text +'</a></p>');
+            }
+          });
+
+          markers.addLayer(geoJsonLayer);
+
+          map.addLayer(markers);
+          map.fitBounds(markers.getBounds());
+    </script>
+</html>
+```
+
+GitHub also [supports rendering geoJSON](https://help.github.com/articles/mapping-geojson-files-on-github/) files. For example, the geoJSON file above is rendered [here](https://gist.github.com/ruebot/6f1960198c3dbf92ae6d) with a simple Gist.
+
+Can't embed the actual map here. Maybe we can pull this off with Code4Lib Journal if it is published. **Let's embed them!**
+
+**Place holder for now: http://ruebot.net/page/elxn42-tweets-map**
 
 ### Users
 
@@ -330,7 +386,7 @@ From the above, we can see that there were 1,988,693 URLs tweeted, representing 
 | 10.  |  2707  | https://www.mypayingads.com/index.php?ref=51826                           |
 
 
-We were also curious how many domains were tweeted. This required two steps. First, taking a text file of the URL list and then extracting only the domain:
+We were also curious how many domains were tweeted. This required two steps. First, taking a text file (see `elxn42-tweets-urls.txt` in our [dataset](http://hdl.handle.net/10864/11311)[6]) of the URL list and then extracting only the domain:
 
 ```bash
 #!/bin/bash
@@ -443,86 +499,13 @@ This might speak to a new collection strategy?
 
 Note for writing: I created this list by getting a list of the 50 domains, the list of the URLs used, and running `grep -wFf Webarchives-domains.md elxn42-tweets-urls-uniq.txt > intersections.txt`.
 
-**Do we want to include a bit about `ia_cdx_checker.py`?**
-
-```python
-#!/usr/bin/env python
-"""
-$ python ia_cdx_checker.py elxn42-tweets-urls-fixed-uniq-no-count.txt | cat > elx42_urls_in_ia.txt
-"""
-
-from __future__ import print_function
-
-import sys
-import json
-import fileinput
-import logging
-import io
-from urllib2 import Request, urlopen, URLError, HTTPError
-import multiprocessing
-
-POOL_SIZE = 3
-
-logging.basicConfig(filename="ia_cdx.log", level=logging.INFO)
-
-def check_ia_cdx(line):
-    elx42_url = line.rstrip('\n')
-    e = None
-    d = None
-    f = None
-    g = None
-    try:
-        url = 'http://web.archive.org/cdx/search/cdx?url=' + elx42_url + '&output=json&limit=-2'
-        request = Request(url, headers={'User-Agent': "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 1.1.4322; .NET CLR 2.0.50727; .NET CLR 3.0.04506.30)"})
-        jsonData = urlopen(request)
-        data = json.load(jsonData)
-        first_date = data[1][1]
-        second_date = data[2][1]
-        if first_date.startswith('201508'):
-            print(elx42_url)
-        if first_date.startswith('201509'):
-            print(elx42_url)
-        if first_date.startswith('201510'):
-            print(elx42_url)
-        if first_date.startswith('201511'):
-            print(elx42_url)
-        if first_date.startswith('201512'):
-            print(elx42_url)
-        if second_date.startswith('201508'):
-            print(elx42_url)
-        if second_date.startswith('201509'):
-            print(elx42_url)
-        if second_date.startswith('201510'):
-            print(elx42_url)
-        if second_date.startswith('201511'):
-            print(elx42_url)
-        if second_date.startswith('201512'):
-            print(elx42_url)
-    except HTTPError as e:
-        logging.error("HTTPError: %s when looking up %s", e, elx42_url)
-    except IndexError as d:
-        logging.error("IndexError: %s when looking up %s", d, elx42_url)
-    except ValueError as f:
-        logging.error("ValueError: %s when looking up %s", f, elx42_url)
-    except httplib.BadStatusLine as g:
-        logging.error("BadStatusLine: %s when looking up %s", g, elx42_url)
-
-def main():
-    pool = multiprocessing.Pool(POOL_SIZE)
-    for line in pool.imap_unordered(check_ia_cdx, fileinput.input()):
-        this_is_bad = line
-
-if __name__ == "__main__":
-    main()
-```
-
 ## Conclusion
 
-This paper has outlined a light-weight and open-source method of collecting and analyzing Twitter events. The case study of the 2015 Canadian federal election hashtag, #elxn42, is roughly analogous to other medium-scale, longitudinal events: it lacked the severe spikes and pitfalls of an event such as the Paris shootings or an American election (in which case a commercial approach would be necessary for full scoping). Yet it is a perfect fit for many events of interest to libraries, archives, and special collections.
+This article has outlined a light-weight and open-source method of collecting and analyzing Twitter events. The case study of the 2015 Canadian federal election hashtag, #elxn42, is roughly analogous to other medium-scale, longitudinal events: it lacked the severe spikes and pitfalls of an event such as the Paris shootings or an American election (in which case a commercial approach would be necessary for full scoping). Yet it is a perfect fit for many events of interest to libraries, archives, and special collections.
 
 Beginning by identifying a hashtag of interest, `twarc` can be used to assemble a full dataset of tweets. `twarc-report`, `twarc`'s utilities, and other tools discussed here can all give users a rough sense of what happened within the collection. These distant reading approaches could help isolate particular days, users, or popular tweets for researchers to study. They could not read all four million tweets, but they could use these tools to find the right ones to investigate further. While Twitter's [Developer Agreement & Policy](https://dev.twitter.com/overview/terms/agreement-and-policy) prevent the wholescale sharing of the collected data itself, rosters of Tweet IDs can be easily shared using institutional repositories or other sharing platforms, allowing other users to "rehydrate" their own tweets. While this has the downside of removing tweets deleted until the moment of rehydration, this allows one to continually monitor "churn" within a collection.
 
-In an era where web archiving and twitter collection can be seen as expensive luxuries, this paper shows how for a relatively small investment of computing power, bandwidth, and storage, people can create and analyze their own Twitter archives. We hope that our #elxn42 experience can serve as an illustrative model.
+In an era where web archiving and twitter collection can be seen as expensive luxuries, this article shows how for a relatively small investment of computing power, bandwidth, and storage, people can create and analyze their own Twitter archives. We hope that our #elxn42 experience can serve as an illustrative model.
 
 ## Acknowledgements
 
