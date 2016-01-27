@@ -1,4 +1,4 @@
-# An Exploratory look at 3,918,932 #elxn42 tweets
+# An Open-Source Strategy for Documenting Events: The Case Study of 3,918,932 #elxn42 Tweets
 
 Nick Ruest (York University), Ian Milligan (University of Waterloo)
 
