@@ -10,7 +10,7 @@ While Twitter is not a representative sample of broader society - Pew Research n
 
 On August 3, 2015, the team initiated both a Search API and Stream API collection with twarc using the hashtag #elxn42. Data collection ceased on November 5, 2015, the day after Justin Trudeau was sworn in as the 42nd Prime Minister of Canada. We collected for a total of 102 days, 13 hours and 50 minutes.
 
-To analyze the data set, we took advantage of a number of command line tools, utilities that are available within twarc, twarc-report, and `jq`. In accordance with the [Twitter Developer Agreement & Policy](https://dev.twitter.com/overview/terms/agreement-and-policy), we made the tweet IDs and other derivative data available in a data repository. This allows other people to use our dataset, cite our dataset, and enhance their own research projects by drawing on #elxn42 tweets.
+To analyze the data set, we took advantage of a number of command line tools, utilities that are available within twarc, twarc-report, and `jq`. In accordance with the [Twitter Developer Agreement & Policy](https://dev.twitter.com/overview/terms/agreement-and-policy), and after ethical deliberations discussed below, we made the tweet IDs and other derivative data available in a data repository. This allows other people to use our dataset, cite our dataset, and enhance their own research projects by drawing on #elxn42 tweets.
 
 Our analytics included:
 
@@ -19,7 +19,7 @@ Our analytics included:
 - URL analysis, comparing both to Archive-It collections and the [Wayback Availability API](https://archive.org/help/wayback_api.php) to add to our understanding of crawl completeness;
 - and image analysis, using an archive of extracted images.
 
-Our article introduces our collecting work, the analysis we have done, and provides a framework for other collecting institutions to do similar work with our off-the-shelf open-source tools.
+Our article introduces our collecting work, ethical considerations, the analysis we have done, and provides a framework for other collecting institutions to do similar work with our off-the-shelf open-source tools. We conclude by ruminating about connecting Twitter archiving with a broader web archiving strategy.
 
 ## Introduction
 
