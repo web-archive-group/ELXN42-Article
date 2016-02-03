@@ -533,7 +533,7 @@ We'd like to graciously thank the support of the Social Sciences and Humanities 
 [12]: http://thenewinquiry.com/blogs/zunguzungu/notallpublic-heartburn-twitter/ "A. Bady, #NotAllPublic, Heartburn, Twitter, 10 June 2014, http://thenewinquiry.com/blogs/zunguzungu/notallpublic-heartburn-twitter/, last accessed 16 June 2015"
 [13]: http://www.cbc.ca/newsblogs/yourcommunity/2014/09/universitys-black-twitter-study-generates-controversy.html "Lauren O'Neil, "University's 'Black Twitter' study generates controversy," 4 September 2014, http://www.cbc.ca/newsblogs/yourcommunity/2014/09/universitys-black-twitter-study-generates-controversy.html."
 [14]: https://modelviewculture.com/pieces/the-twitterethics-manifesto "Dorothy Kim and Eunsong Kim, "The #TwitterEthics Manifesto," 7 April 2014, https://modelviewculture.com/pieces/the-twitterethics-manifesto."
-[15]: Seemantani Sharma, Vakil Smallen, and Daniel Chudnov, "Social Feed Manager," presented at *Web Archives 2015: Capture, Curate, Analyze*, Ann Arbor, MI, 13 November 2015. 
+[15]: http://www.lib.umich.edu/webarchivesconference/webarchives-schedule "Seemantani Sharma, Vakil Smallen, and Daniel Chudnov, "Social Feed Manager," presented at *Web Archives 2015: Capture, Curate, Analyze*, Ann Arbor, MI, 13 November 2015."
 
 * Ed Summers, Hugo van Kemenade, Peter Binkley, Nick Ruest, recrm, Stefano Costa, Eric Phetteplace, et al. ‘Twarc: v0.3.4.’ Zenodo, 2015. doi:10.5281/zenodo.31919.
 * Peter Binkley. 'twarc-report' GitHub, 2015. https://github.com/pbinkley/twarc-report
