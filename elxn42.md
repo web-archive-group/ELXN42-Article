@@ -65,18 +65,19 @@ This does not necessarily mean that between LAC and our research group that we c
 
 ### How do you collect?
 
-Collecting tweets is very straight forward. Once you [install and configure twarc](https://github.com/edsu/twarc#install), you can collect tweets using the Twitter Stream and Search APIs. As noted below, syntax changed slightly with warc 0.5.0 so we have provided both as an example:
+Collecting tweets is very straight forward. Once you [install and configure twarc](https://github.com/edsu/twarc#install), you can collect tweets using the Twitter Stream and Search APIs. As noted below, syntax changed slightly with twarc 0.5.0 so we have provided both as an example:
 
 Search API: `twarc.py --search "#elxn42" > elxn42-search.json`
 
 Stream API ( < v0.5.0 twarc): `twarc.py --stream "#elxn42" > elxn42-stream.json`
+
 Stream API ( > v0.5.0 twarc): `twarc.py --track "#elxn42" > elxn42-stream.json`
 
 These two APIs complement each other well. The Search API provides historical search on a given query, such as #elxn42, stretching back somewhere between six and nine days of Tweets. Their API cautions that "the Search API is focused on relevance and not completeness. This means that some Tweets and users may be missing from search results."[10] Given our project goals, the Search API is insufficient.
 
 For completeness, then, we can turn to the Streaming API. This gives "developers low latency access to Twitter's global stream of Tweet data," up to the aforementioned 1% volume.[11] Whereas Search API goes back into past tweets, Streaming only captures tweets _as they happen_. To put this into context, we could begin the Search API on #elxn42 on 5 September 2015 and still get tweets from 3 September 2015, for example; Streaming API cannot retroactively gather content. It is more complete, however.
 
-A combination of the two is a recommended approach: the streaming API for the bulk collection, and the search API to fill in any gaps that may have happened when using the system. 
+A combination of the two is a recommended approach: the streaming API for the bulk collection, and the search API to fill in any gaps that may have happened when using the system.
 
 Once collected, tweets can be shared with other people through the tweet IDs, which can be rehydrated using twarc. As twarc's README notes:
 
@@ -108,7 +109,7 @@ To analyze the data set, we took advantage of a command line utilities, a number
 
 `python ~/git/twarc-report/d3times.py elxn42-tweets-combined-deduplicated.json -a -o embed -t local -i 24H > elxn42-times.html`
 
-The flags do the following: `-a` aggregates output; `-o` specifies we wanted embedded output, `-t` specifies the timezone to use (local, or EST, in our case), `-i` sets the interval, in our case every 24 hours. 
+The flags do the following: `-a` aggregates output; `-o` specifies we wanted embedded output, `-t` specifies the timezone to use (local, or EST, in our case), `-i` sets the interval, in our case every 24 hours.
 
 Upon completion of capturing #elxn42, the team immediately began aggregating their dataset into a single file. The team began with 12 different line oriented JSON object files totaling 22GB and 4,117,753 undeduplicated tweets. These 12 files were aggregated into a single file: `cat *json > elxn42-tweets.json`. Once aggregated, the dataset was validated with [`validate.py`](https://github.com/edsu/twarc/blob/master/utils/validate.py), and the deduplicated (we have to dedupe given the combination of Search API and Stream API collection modes with twarc) using [`deduplicate.py`](https://github.com/edsu/twarc/blob/master/utils/deduplicate.py). Once deduplicated, we were able to come up with the number of tweets collected. Since each tweet is a single JSON object representing a single line in the file, we were able to quickly calculate with simple command line utilities:
 
