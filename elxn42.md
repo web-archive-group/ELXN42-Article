@@ -221,7 +221,7 @@ $ python ~/git/twarc/utils/tweet_urls.py elxn42-tweets-combined-deduplicated.jso
 | 9.   | 1421           | https://twitter.com/west_ender/status/656295500765761537      |
 | 10.  | 1417           | https://twitter.com/JustinTrudeau/status/655912460101152768   |
 
-### Geographic infomaration
+### Geographic information
 
 5,370 out of #elxn42 3,918,932 tweets (0.14%) had geographic information associated with them. We were able to determine this by utilizing [`geo.py`](https://github.com/edsu/twarc/blob/master/utils/geo.py) and simple command line utilities:
 
