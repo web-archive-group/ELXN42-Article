@@ -509,7 +509,7 @@ In an era where web archiving and twitter collection can be seen as expensive lu
 
 ## Acknowledgements
 
-We'd like to graciously thank the support of the Social Sciences and Humanities Research Council of Canada, which has supported this work with an Insight Grant (435-2015-0011). As well as Russell White and Tom Smyth from Library and Archives Canada for collecting and sharing #elnx42 tweets, and Ed Summers for creating twarc. Thanks as well to *names of folks who give us help/suggestions/amazing insights here via GitHub :) -- Jason Colditz, Zack Macdonald, Shawn Graham, Ed Summers*
+We'd like to graciously thank the support of the Social Sciences and Humanities Research Council of Canada, which has supported this work with an Insight Grant (435-2015-0011). As well as Russell White and Tom Smyth from Library and Archives Canada for collecting and sharing #elnx42 tweets, and Ed Summers for creating twarc. Thanks as well to *names of folks who give us help/suggestions/amazing insights here via GitHub :) -- Jason Colditz, Zack Macdonald, Shawn Graham, Ed Summers, John Fink*
 
 ## References
 
@@ -545,3 +545,6 @@ We'd like to graciously thank the support of the Social Sciences and Humanities 
 * A. Bady, #NotAllPublic, Heartburn, Twitter, 10 June 2014, http://thenewinquiry.com/blogs/zunguzungu/notallpublic-heartburn-twitter/, last accessed 16 June 2015
 * Lauren O'Neil, "University's 'Black Twitter' study generates controversy," 4 September 2014, http://www.cbc.ca/newsblogs/yourcommunity/2014/09/universitys-black-twitter-study-generates-controversy.html
 * Dorothy Kim and Eunsong Kim, "The #TwitterEthics Manifesto," 7 April 2014, https://modelviewculture.com/pieces/the-twitterethics-manifesto
+* Seemantani Sharma, Vakil Smallen, and Daniel Chudnov, "Social Feed Manager," presented at *Web Archives 2015: Capture, Curate, Analyze*, Ann Arbor, MI, 13 November 2015." http://www.lib.umich.edu/webarchivesconference/webarchives-schedule
+* Ed Summers, "On Forgetting and Hydration," 18 November 2014, https://medium.com/on-archivy/on-forgetting-e01a2b95272#.84r48yugk.
+* Ed Summers, "Tweets and Deletes," 14 April 2015, http://inkdroid.org/2015/04/14/tweets-and-deletes/.
