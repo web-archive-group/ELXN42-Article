@@ -1,4 +1,4 @@
-# An Open-Source Strategy for Documenting Events: The Case Study of 3,918,932 #elxn42 Tweets
+# An Open-Source Strategy for Documenting Events: The Case Study of the 42nd Canadian Federal Election on Twitter
 
 Nick Ruest (York University), Ian Milligan (University of Waterloo)
 
@@ -8,7 +8,7 @@ This article examines the tools, approaches, collaboration, and findings of the 
 
 While Twitter is not a representative sample of broader society - Pew Research notes that it skews young, college-educated, and affluent (above $50,000 household income) – Twitter still represents an exponential increase in the amount of information generated, retained, and preserved from 'everyday' people. Therefore, when historians study the 2015 federal election, Twitter will be a prime source.
 
-On August 3, 2015, the team initiated both a Search API and Stream API collection with twarc, a tool developed by Ed Summers, using the hashtag #elxn42. Data collection ceased on November 5, 2015, the day after Justin Trudeau was sworn in as the 42nd Prime Minister of Canada. We collected for a total of 102 days, 13 hours and 50 minutes.
+On August 3, 2015, the team initiated both a Search API and Stream API collection with twarc, a tool developed by Ed Summers, using the hashtag #elxn42. The hashtag refered to the election being Canada's 42nd general federal election (hence 'election 42' or elxn42). Data collection ceased on November 5, 2015, the day after Justin Trudeau was sworn in as the 42nd Prime Minister of Canada. We collected for a total of 102 days, 13 hours and 50 minutes.
 
 To analyze the data set, we took advantage of a number of command line tools, utilities that are available within twarc, twarc-report, and `jq`. In accordance with the [Twitter Developer Agreement & Policy](https://dev.twitter.com/overview/terms/agreement-and-policy), and after ethical deliberations discussed below, we made the tweet IDs and other derivative data available in a data repository. This allows other people to use our dataset, cite our dataset, and enhance their own research projects by drawing on #elxn42 tweets.
 
