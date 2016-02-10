@@ -89,7 +89,7 @@ The command:
 
 will recreate the original tweet(s) in json format, provided the content is still available on Twitter. If you wanted to use our dataset, for example, you could download it from our [#elxn42 study](http://hdl.handle.net/10864/11311) in Scholars Portal Dataverse. If a user deleted their tweet between the time of our collection and the time of your rehydration, you would not gain access to that tweet.
 
-### Should You Collect?
+### Should You Collect? Ethical Considerations
 
 Beyond the technical question of how to collect tweets comes the ever-important question of should you, and if so, how to handle the question of consent? Strictly speaking, we have permission in accordance in a "legal sense," thanks to the [Twitter Developer Agreement & Policy](https://dev.twitter.com/overview/terms/agreement-and-policy). We can only capture public tweets, and given the tweets are public, we interpret that as consent in the broadest form to archive and preserve this material. Consent is not perpetual, as users may decide to make their account "private" after collection. Accordingly, when tweet ids are hydrated, only publicly accessible tweets are hydrated (indeed, as deleted or private tweets are not made available via the API, this is unavoidable - one cannot get data about a deleted tweet from Twitter).
 
@@ -113,7 +113,7 @@ To analyze the data set, we took advantage of a command line utilities, a number
 
 The flags do the following: `-a` aggregates output; `-o` specifies we wanted embedded output, `-t` specifies the timezone to use (local, or EST, in our case), `-i` sets the interval, in our case every 24 hours.
 
-Upon completion of capturing #elxn42, the team immediately began aggregating their dataset into a single file. The team began with 12 different line oriented JSON object files totaling 22GB and 4,117,753 undeduplicated tweets. These 12 files were aggregated into a single file: `cat *json > elxn42-tweets.json`. Once aggregated, the dataset was validated with [`validate.py`](https://github.com/edsu/twarc/blob/master/utils/validate.py), and the deduplicated (we have to dedupe given the combination of Search API and Stream API collection modes with twarc) using [`deduplicate.py`](https://github.com/edsu/twarc/blob/master/utils/deduplicate.py). Once deduplicated, we were able to come up with the number of tweets collected. Since each tweet is a single JSON object representing a single line in the file, we were able to quickly calculate with simple command line utilities:
+Upon completion of capturing #elxn42, the team immediately began aggregating their dataset into a single file. The team began with 12 different line oriented JSON object files totaling 22GB and 4,117,753 undeduplicated tweets. These 12 files were aggregated into a single file: `cat *json > elxn42-tweets.json`. Once aggregated, the dataset was validated with [`validate.py`](https://github.com/edsu/twarc/blob/master/utils/validate.py) (ensuring that it was a valid JSON object), and the deduplicated (we have to dedupe given the combination of Search API and Stream API collection modes with twarc) using [`deduplicate.py`](https://github.com/edsu/twarc/blob/master/utils/deduplicate.py). Once deduplicated, we were able to come up with the number of tweets collected. Since each tweet is a single JSON object representing a single line in the file, we were able to quickly calculate with simple command line utilities:
 
 ```bash
 $ cat elxn42-tweets-combined-deduplicated.json | wc -l
@@ -201,7 +201,9 @@ Here we can see the following transition in the tweets:
 - 19 October 2015: Election day. We see "Vote" dominate, as well as the word "Liberal." This was mostly reflecting the widely retweeted announcement of the Liberal Party of Canada's victory that evening.
 - 20 October 2015: The new Prime Minister Trudeau is the topic of the day, as well as his first name: "Justin."
 
-At a glance, we are seeing a major narrative within the tweets.
+At a glance, we are seeing a major narrative within the tweets. [You can see all of the wordclouds yourself here](http://ruebot.net/elxn42/wordclouds/), or [animated here](http://ruebot.net/elxn42/elxn42-wordcloud-animation.html). This could be useful for a researcher wanting an overall birds-eye-view of content, or as a teaser to further investigations.
+
+It also speaks to how researchers could use more sophisticated textual analysis software or programming languages, such as R, Python, Mathematica, or beyond, to extract meaningful information from this soup of knowledge.
 
 ### Retweets
 
@@ -343,9 +345,9 @@ Two of the accounts, StopHarperToday and 444_nal4b (a spam account), no longer e
 
 ### Hashtags
 
-We were able to create a list of the unique tags using in our dataset by using [`tags.py`](https://github.com/edsu/twarc/blob/master/utils/tags.py).
+We were able to create a list of the unique tags using in our dataset by using [`tags.py`](https://github.com/edsu/twarc/blob/master/utils/tags.py). While our original collecting was focused on the #elxn42 hashtag, many tweets use multiple hashtags: tweeting about the New Democratic Party of Canada with #ndp, for example, in addition to the larger #elxn42 tag.
 
-Using `tags.py` from twarc utilities:
+We did so by using `tags.py` from twarc utilities:
 ```bash
 $ python ~/git/twarc/utils/tags.py elxn42-tweets-combined-deduplicated.json > elxn42-tweet-tags.txt
 $ cat elxn42-tweet-tags.txt | wc -l
@@ -371,7 +373,7 @@ From the above, we can see that there were 70,112 unique hashtags were used. The
 
 We are able to create a list of the unique URLs tweeted in our dataset by using [`urls.py`](https://github.com/edsu/twarc/blob/master/utils/urls.py), after first unshortening the urls as described in the "Approach to Analysis" section.
 
-Using `urls.py` from twarc utilities:
+We did so by using `urls.py` from twarc utilities:
 ```bash
 $ python ~/git/twarc/utils/urls.py elxn42-tweets-combined-deduplicated-unshortened.json > elxn42-tweets-urls.txt
 $ cat elxn42-tweets-urls.txt | sort | uniq -c | sort -n > elxn42-tweets-urls-uniq.txt
