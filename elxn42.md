@@ -300,9 +300,9 @@ Using the geoJSON file, we can put them on an interactive map with [leaflet.js](
 
 GitHub also [supports rendering geoJSON](https://help.github.com/articles/mapping-geojson-files-on-github/) files. For example, the geoJSON file above is rendered [here](https://gist.github.com/ruebot/6f1960198c3dbf92ae6d) with a simple Gist.
 
-Can't embed the actual map here. Maybe we can pull this off with Code4Lib Journal if it is published. **Let's embed them!**
-
 **Place holder for now: http://ruebot.net/page/elxn42-tweets-map**
+**We can embed the map after we run pandoc on the markdown when we're ready to submit**
+
 
 ### Users
 
@@ -550,3 +550,13 @@ We'd like to graciously thank the support of the Social Sciences and Humanities 
 * Seemantani Sharma, Vakil Smallen, and Daniel Chudnov, "Social Feed Manager," presented at *Web Archives 2015: Capture, Curate, Analyze*, Ann Arbor, MI, 13 November 2015." http://www.lib.umich.edu/webarchivesconference/webarchives-schedule
 * Ed Summers, "On Forgetting and Hydration," 18 November 2014, https://medium.com/on-archivy/on-forgetting-e01a2b95272#.84r48yugk.
 * Ed Summers, "Tweets and Deletes," 14 April 2015, http://inkdroid.org/2015/04/14/tweets-and-deletes/.
+
+## About the Authors
+
+[Nick Ruest](http://ruebot.net/) is the Digital Assets Librarian at [York University](http://www.yorku.ca/index.html), and co-Principal Investigator of the SSHRC grant "[A Longitudinal Analysis of the Canadian World Wide Web as a Historical Resource, 1996-2014](https://uwaterloo.ca/web-archive-group/)".
+
+At York University, he oversees the development of data curation, asset management and preservation initiatives, along with creating and implementing systems that support the capture, description, delivery, and preservation of digital objects having significant content of enduring value. He is also active in the [Islandora](http://islandora.ca/) and [Fedora](http://fedorarepository.org/) communities, serving as Project Director for the [Islandora CLAW project](https://github.com/Islandora-CLAW/CLAW), member of the [Islandora Foundation's](http://islandora.ca/if) [Roadmap Committee](http://islandora.ca/if/board) and [Board of Directors](http://islandora.ca/if/board), and contributes code to the project. In the past he has served as the Release Manager for Islandora, the moderator for the [OCUL Digital Curation Community](http://spotdocs.scholarsportal.info/display/ODCC/OCUL+Digital+Curation+Community+Home), the President of the [Ontario Library and Technology Association](https://www.accessola.org/OLAWEB/OLITA/About_OLITA/OLAWEB/OLITA/About_OLITA.aspx), and President of [McMaster University Academic Librarians' Association](http://muala.ca/).
+
+[Ian Milligan](https://ianmilligan.ca/) is an assistant professor of digital and Canadian history at the University of Waterloo. He is also principal investigator of the Web Archives for Historical Research group. He serves as both a co-editor of the public history project [ActiveHistory.ca](http://activehistory.ca/), as well as an an editor of the Programming Historian.
+
+His new book, Exploring Big Historical Data: The Historian's Macroscope (co-authored with Shawn Graham and Scott Weingart), appeared in late 2015. He has published on Web and digital archives in Histoire Sociale/Social History, the Canadian Historical Review, and the Journal of the Canadian Historical Association. His 2013 article “Mining the Internet Graveyard” won the Journal of the Canadian Historical Association’s best article award that year. These complement publications in other Canadian academic journals and a 2014 monograph with the University of British Columbia Press entitled Rebel Youth: 1960s Labour Unrest, Young Workers, and New Leftists in English Canada.
