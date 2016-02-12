@@ -63,7 +63,7 @@ $ python ~/git/twarc/utils/deduplicate.py elxn42-tweets-combined.json > elxn42-t
 
 This does not necessarily mean that between LAC and our research group that we captured all tweets. Driscoll and Walker have shown substantial differences in what is captured using Twitter's commercial Gnip service versus the streaming API.[9] While the #elxn42 hashtag never exceeded the hard limit of 1% of all tweets enacted using the streaming API – which comes into play if the volume of tweets you are capturing exceeds 1%, common in cases such as high-profile events (the Paris shootings or an American presidential debate) - there is still a chance that some content was not collected.
 
-### How do you collect?
+### How Do You Collect?
 
 Collecting tweets is very straight forward. Once you [install and configure twarc](https://github.com/edsu/twarc#install), you can collect tweets using the Twitter Stream and Search APIs. As noted below, syntax changed slightly with twarc 0.5.0 so we have provided both as an example:
 
@@ -230,7 +230,7 @@ $ python ~/git/twarc/utils/tweet_urls.py elxn42-tweets-combined-deduplicated.jso
 | 9.   | 1421           | https://twitter.com/west_ender/status/656295500765761537      |
 | 10.  | 1417           | https://twitter.com/JustinTrudeau/status/655912460101152768   |
 
-### Geographic information
+### Geographic Information
 
 5,370 out of #elxn42 3,918,932 tweets (0.14%) had geographic information associated with them. We were able to determine this by utilizing [`geo.py`](https://github.com/edsu/twarc/blob/master/utils/geo.py) and simple command line utilities:
 
@@ -440,7 +440,7 @@ The top 10 domains that were tweeted were as follows:
 We can get a sense of how social media shapes what people share, although old legacy media was surprisingly well-represented in the Canadian context: the Canada Broadcast Corporation (especially their election day dashboard), the two highest-circulation newspapers the *Globe and Mail* and *Toronto Star*, and popular television networks CTV and Global News. While the *Huffington Post*'s Canadian edition made an appearance, we were surprised by the degree to which traditional media dominated.
 
 
-### Embedded images
+### Embedded Images
 
 We are able to create a list of images tweeted in our dataset by using [`image_urls.py`](https://github.com/edsu/twarc/blob/master/utils/image_urls.py).
 
@@ -559,6 +559,6 @@ We'd like to graciously thank the support of the Social Sciences and Humanities 
 
 At York University, he oversees the development of data curation, asset management and preservation initiatives, along with creating and implementing systems that support the capture, description, delivery, and preservation of digital objects having significant content of enduring value. He is also active in the [Islandora](http://islandora.ca/) and [Fedora](http://fedorarepository.org/) communities, serving as Project Director for the [Islandora CLAW project](https://github.com/Islandora-CLAW/CLAW), member of the [Islandora Foundation's](http://islandora.ca/if) [Roadmap Committee](http://islandora.ca/if/board) and [Board of Directors](http://islandora.ca/if/board), and contributes code to the project. In the past he has served as the Release Manager for Islandora, the moderator for the [OCUL Digital Curation Community](http://spotdocs.scholarsportal.info/display/ODCC/OCUL+Digital+Curation+Community+Home), the President of the [Ontario Library and Technology Association](https://www.accessola.org/OLAWEB/OLITA/About_OLITA/OLAWEB/OLITA/About_OLITA.aspx), and President of [McMaster University Academic Librarians' Association](http://muala.ca/).
 
-[Ian Milligan](https://ianmilligan.ca/) is an assistant professor of digital and Canadian history at the University of Waterloo. He is also principal investigator of the Web Archives for Historical Research group. He serves as  a co-editor of the [Programming Historian](http://programminghistorian.org/).
+[Ian Milligan](https://ianmilligan.ca/) is an assistant professor of digital and Canadian history at the University of Waterloo. He is also principal investigator of the Web Archives for Historical Research group. He serves as a co-editor of the [Programming Historian](http://programminghistorian.org/). His favourite service roles at Waterloo involve working with the University of Waterloo Library and he also serves on Library and Archives Canada's Acqusitions Advisory Committee.
 
 His new book, [Exploring Big Historical Data: The Historian's Macroscope](http://www.themacroscope.org/) (co-authored with Shawn Graham and Scott Weingart), appeared in late 2015. He has published on Web and digital archives in _Histoire Sociale/Social History_, the _Canadian Historical Review_, the _International Journal of Arts and Humanities Computing_, and the _Journal of the Canadian Historical Association_. His 2013 article “Mining the Internet Graveyard” won the _Journal of the Canadian Historical Association_’s best article award that year. These complement publications in other Canadian academic journals and a 2014 monograph with the University of British Columbia Press entitled _Rebel Youth: 1960s Labour Unrest, Young Workers, and New Leftists in English Canada_.
