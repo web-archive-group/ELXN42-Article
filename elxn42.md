@@ -341,7 +341,7 @@ From the above, we can see that there are 318,176 unique users in the dataset, a
 | 9.   | 7360   | Frazzling         |
 | 10.  | 7019   | StopHarperToday   |
 
-Two of the accounts, StopHarperToday and 444_nal4b (a spam account), no longer exist. We discuss this in our deletion section below. The other users all tweeted a large amount on this hashtag, in a public capacity. **what does "in a public capacity" mean? as opposed to what?**
+Two of the accounts, StopHarperToday and 444_nal4b (a spam account), no longer exist. We discuss this in our deletion section below. The other users all tweeted a large amount on this hashtag, either as individuals or on behalf of organizations.
 
 ### Hashtags
 
@@ -437,7 +437,7 @@ The top 10 domains that were tweeted were as follows:
 | 9.   | 39989   | twimg.com             |
 | 10.  | 35280   | macleans.ca           |
 
-We can get a sense of how social media shapes what people share, although old legacy media **"old legacy" is redundant surely** was surprisingly well-represented in the Canadian context: the Canada Broadcast Corporation (especially their election day dashboard), the two highest-circulation newspapers the *Globe and Mail* and *Toronto Star*, and popular television networks CTV and Global News. While the *Huffington Post*'s Canadian edition made an appearance, we were surprised by the degree to which traditional media dominated.
+We can get a sense of how social media shapes what people share, although legacy media was surprisingly well-represented in the Canadian context: the Canada Broadcast Corporation (especially their election day dashboard), the two highest-circulation newspapers the *Globe and Mail* and *Toronto Star*, and popular television networks CTV and Global News. While the *Huffington Post*'s Canadian edition made an appearance, we were surprised by the degree to which traditional media dominated.
 
 
 ### Embedded Images
