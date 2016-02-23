@@ -1,4 +1,4 @@
-# An Exploratory look at 3,918,932 #elxn42 tweets
+# An Open-Source Strategy for Documenting Events: The Case Study of 42nd Canadian Federal Election on Twitter
 
 This article examines the tools, approaches, collaboration, and findings of the Web Archives for Historical Research Group around the capture and analysis of about 4M tweets during the 2015 Canadian Federal Election. We hope that national libraries and other institutions will find our model useful as they consider how to archive ongoing events using Twitter. 
 
