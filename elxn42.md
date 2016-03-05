@@ -136,7 +136,7 @@ With the URLs, we were able to run subsequent analysis: from creating a subseque
 Using `jq`, we extracted all of the plain text of every tweet:
 
 ```bash
-$ jq (cat elxn42-tweets.json | jq -c '.text' | cat > elxn42-tweets-text.txt)
+$ cat elxn42-tweets.json | jq -c '.text' | cat > elxn42-tweets-text.txt
 ```
 
 This was useful for working with text analysis software, such as custom scripts written in R, Python, Mathematica, or even using the accessible online platform [Voyant-Tools](http://voyant-tools.org/).
