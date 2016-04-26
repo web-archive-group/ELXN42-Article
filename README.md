@@ -1,3 +1,5 @@
+# See: See: http://journal.code4lib.org/articles/11358
+
 # About
 
 This repository holds draft of a proposed article for [Code4Lib Journal](http://journal.code4lib.org/) -- entitled "An Open-Source Strategy for Documenting Events: The Case Study of 3,918,932 #elxn42 Tweets" -- which is currently being written in public by Nick Ruest (York University Libraries) and Ian Milligan (University of Waterloo, Dept. of History).
