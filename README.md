@@ -1,4 +1,4 @@
-# See: See: http://journal.code4lib.org/articles/11358
+# See: http://journal.code4lib.org/articles/11358
 
 # About
 
