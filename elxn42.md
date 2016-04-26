@@ -1,3 +1,5 @@
+# See: http://journal.code4lib.org/articles/11358
+
 # An Open-Source Strategy for Documenting Events: The Case Study of the 42nd Canadian Federal Election on Twitter
 
 Nick Ruest (York University), Ian Milligan (University of Waterloo)
